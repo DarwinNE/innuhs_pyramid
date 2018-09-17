@@ -105,8 +105,7 @@ char *namesabb[LO] = {"", "torc", "key ", "gird", "sign", "door",
 char *verbsabb[NV] = {"",   "poin", "exit", "inve", "i   ", "see ", "go  ",
     "run ", "walk", "look", "take", "grab", "put ", "leav", "give", "open",
     "*   ", "play", "read", "wave", "dig ", "eat ", "drin", "clos", "brea",
-    "dest", "ligh", "speg", "jump", "fuck", "die ", "chan"};
-//                    ??? 
+    "dest", "ligh", "swit", "jump", "fuck", "die ", "chan"};
 
 char *cunicolostretto=
     "in a narrow tunnel, with a trench too large to be jumped across.";
