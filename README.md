@@ -44,6 +44,7 @@ switch off, exit, inventary, i, look, go, run, walk, see, take, grab, put,
 leave, give , open, *, play, read, wave, dig, eqt, drink, close,
 breqk, destroy, light, switch off, jump, change```
 
+
 Here is the list for the version in Italian:
 ```torcia, chiave, trave, scritta, porta, flauto, teschio, collana, scheletro,
 altare, bende, scure, batterie, droghe, cobra, zaffiro, spada, vaso, sarcofago,
@@ -51,6 +52,7 @@ maschera, mummia, sabbia, stanza, geroglifico, sala, corridoio, cunicolo, scala,
 nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, punteggio, arrenditi,
 inventario, i, guarda, vai, corri, cammina, esamina, prendi, piglia, posa, 
 lascia, dai , apri, *, suona, leggi, ondeggia, scava, mangia, bevi, chiudi,
-rompi, sfonda, accendi, spegni, salta, cambia``
+rompi, sfonda, accendi, spegni, salta, cambia```
+
 
 
