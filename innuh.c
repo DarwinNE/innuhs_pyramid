@@ -41,6 +41,10 @@
     #include"modern.h"
 #endif
 
+// Number of complete descriptions of objects
+#define LO 41
+#define NV 32
+#define NN 42
 
 #ifdef ITALIAN
     #include"italian.h"
@@ -91,9 +95,6 @@ char q[BUFFERSIZE];
 // The index of the found verb
 int verb=0;
 
-#define NN 40
-
-
 int numberOfObjects;
 
 char buffer[BUFFERSIZE];
@@ -140,7 +141,7 @@ const int objloc_org[] = {0,1,0,3,4,5,6,8,9,10,11,11,11,
 
 
 void (*actions[NV])(void) ={NULL,&punteggio,&resa,&inventario,
-    &inventario,&guarda,&vai,&vai,
+    &inventario,&esamina,&vai,&vai,
     &vai,&esamina,&prendi,&prendi,&posa,&posa,&posa,&apri,
     &guarda,&suona,&leggi,&ondeggia,&scava,&mangia,&bevi,&chiudi,
     &rompi,&rompi,&accendi,&spegni,&salta,&insulta,&insulta,&cambia};
@@ -309,10 +310,12 @@ void sonovedo(void)
         if(objloc[i]==currentPosition) {
             if(fstsee)
                 writesameln(isee);
+            else
+                writesameln(", ");
             fstsee=false;
             // one may test if the index i is valid...
             writesameln(obj[i]);
-            writesameln(", ");
+            
         }
     }
     writeln("");
@@ -370,8 +373,111 @@ int readln()
     return lc;
 }
 
-/** Main parsing function
+/** Improved parser, more flexible than the simpler version.
 */
+void interrogationAndAnalysis(void)
+{
+    boolean search=true;
+    char s[BUFFERSIZE];
+    int ls=0, lc, i, x, ols, app,k;
+    boolean found = false;
+    lc=readln();
+
+    // Search at first the verb. In Italian and in English, it seems safe to
+    // give precedence to the first recognised verb.
+    while(search==true) {
+        k=0;
+        for(; ls<lc; ++ls) {
+            if(playerInput[ls]==' ') {
+                ls++;
+                break;
+            }
+            s[k++]=playerInput[ls];
+        }
+        // Here s may not be finished by a '\0', but it is not an issue.
+        ols=k;
+        // k now contains the length of the first word.
+        // Compensate for strings smaller than 4 chars
+        if(k<4) {
+            for(x=0; x<=4-ols;++x)
+                s[k++]=' ';
+        }
+        // Truncate s if it is longer than 4 chars
+        s[4]='\0';
+        //printf("word 1: %s\n",s);
+        // s now contains the word, truncated to 4 characters. Search to find
+        // if it is recognized or not.
+        for(i=1;i<NV; ++i) {
+            if(strcmp(s,verbsabb[i])==0) {
+                // a verb is found
+                verb = i;
+                found=true;
+                search=false;
+                break;
+            }
+        }
+        if (ls==lc)
+            search=false;
+    }
+    //printf("verb: %s, recognized: %d \n",s, found);
+    if(ls==lc) {
+        if(found==false){
+            ls=0;
+            verb=6;     // By default verb is "go".
+        } else {
+            return;
+        }
+    }
+    search=true;
+    found=false;
+    numberObject=0;
+    
+    // Then search for the name/object. We give precedence to the first
+    // recognised object.
+    
+    while(search==true) {
+        k=0;
+        for(; ls<lc; ++ls) {
+            if(playerInput[ls]==' '){
+                ls++;
+                break;
+            }
+            s[k++]=playerInput[ls];
+        }
+        s[k]='\0';
+        // ls now contains the length of the first word.
+        ols=k;
+        strncpy(q,s,BUFFERSIZE);
+        // Compensate for strings smaller than 4 chars
+        if(k<4) {
+            for(x=0; x<=4-ols;++x)
+                s[k++]=' ';
+        }
+        // Truncate s if it is longer than 4 chars
+        s[4]='\0';
+        //printf("word 2: %s\n",s);
+        for(i=1; i<NN; ++i) {
+            if(strcmp(s,namesabb[i])==0) {
+                app=i;
+                found=true;
+                //printf("---->found!\n");
+                numberObject=app;
+                search=false;
+                strncpy(foundName,s,BUFFERSIZE);
+                break;
+            }
+        }
+        if (ls==lc)
+            search=false;
+    }
+
+    //printf("object: %s, recognized: %d \n",foundName, found);
+}
+
+/** Simpler parsing function. It just take the first word as a verb (truncated
+    to 4 chars and the last word as an object (truncated to 4 chars).
+*/
+/*
 void interrogationAndAnalysis(void)
 {
     int app=0;
@@ -415,7 +521,7 @@ void interrogationAndAnalysis(void)
         }
     }
 
-    //printf("object: %s, recognized: %d \n",s, flag);
+    //printf("verb: %s, recognized: %d \n",s, flag);
     
     if (!flag) {
         verb=6;     // By default verb is "go".
@@ -455,7 +561,7 @@ void interrogationAndAnalysis(void)
         numberObject=app;
     }
     //printf("object: %s, recognized: %d \n",foundName, flag);
-}
+} */
 
 void action(int vb)
 {
@@ -592,17 +698,26 @@ void guarda(void)
 */
 void esamina(void)
 {
+
+    if(numberObject==41) {
+        showDesc=true;
+        return;
+    }
+    if(objloc[numberObject]!=-1 && objloc[numberObject]!=currentPosition) {
+        writeln("?");
+        return;
+    }
     if(numberObject==0) {
         writesameln(dontknowthatword);
         writeln(q);
         return;
     }
-    if((numberObject==4 && currentPosition==4) || (numberObject==16 &&
+    if((numberObject==4) || (numberObject==16 &&
         objloc[16]==-1)) {
         writeln(somethingiswritten);
         return;
     }
-    if(currentPosition==24 && numberObject==19) {
+    if(numberObject==19) {
         writeln(iseesomething);
         objloc[20]=24;
         showDesc = true;

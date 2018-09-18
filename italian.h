@@ -1,10 +1,6 @@
 #ifndef __ITALIAN_H__
 #define __ITALIAN_H__
 
-// Number of complete descriptions of objects
-#define LO 41
-#define NV 32
-
 // Object descriptions
 char* obj[22]=
     {"",
@@ -96,11 +92,11 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
 #endif
 
 // Abbreviated names
-char *namesabb[LO] = {"", "torc", "chia", "trav", "scri", "port",
+char *namesabb[NN] = {"", "torc", "chia", "trav", "scri", "port",
     "flau", "tesc", "coll", "sche", "alta", "bend", "scur", "batt", "drog",
     "cobr", "zaff", "spad", "vaso", "sarc", "masc", "mumm", "sabb", "stan",
     "gero", "sala", "corr", "cuni", "scal", "nord", "sud ", "est ", "oves",
-    "su  ", "giu ", "n   ", "s   ", "e   ", "o   ", "sopr", "sott"};
+    "su  ", "giu ", "n   ", "s   ", "e   ", "o   ", "sopr", "sott","atto"};
 
 // Abbreviated verbs
 char *verbsabb[NV] = {"", "punt", "arre", "inve", "i   ", "guar", "vai ",
@@ -128,7 +124,7 @@ char* mummyfollowing="La mummia mi segue!";
 char* whatshallido="Cosa devo fare?";
 char* whatdoyoumean=" cosa?";
 char* idontunderstand="Non ho capito.";
-char* itspitchblack="Ora e' buio pesto! E' pericoloso muoversi alla cieca";
+char* itspitchblack="Ora e' buio pesto! E' pericoloso muoversi alla cieca.";
 char* iam="Sono ";
 char* mummyattacks="Aiuto! La mummia mi attacca!";
 char* isee="Vedo: ";
@@ -136,13 +132,13 @@ char* unknownverb="Verbo non riconosciuto.";
 char* yougot="Hai raggiunto il ";
 char* ihavewithme="Ho con me:";
 char* nothing="nulla.";
-char* idonotknowthisword="Non conosco questa parola";
-char* idonotunderstand="Non ti capisco";
+char* idonotknowthisword="Non conosco questa parola.";
+char* idonotunderstand="Non ti capisco.";
 char* icantdothatyet="Ancora non posso farlo.";
 char* ifell="Sono caduto e mi sono rotto la testa!";
 char* cantgothere="Non posso andare di la'!";
 char* dontknowthatword="Non conosco la parola ";
-char* somethingiswritten="C'e' scritto qualcosa";
+char* somethingiswritten="C'e' scritto qualcosa.";
 char* iseesomething="Vedo qualcosa...";
 char* torchdesc="E' un bel modello di torcia elettrica professionale: 1000 "
          "candele e lente di Fresnel.";
@@ -151,7 +147,7 @@ char* idonotsee="Non vedo ";
 char* aroundhere=" qui intorno";
 char* dontbesilly="Non essere sciocco!";
 char* dontbestupid="Non fare lo scemo!";
-char* cantcarrymore="Non riesco a  portare nient'altro";
+char* cantcarrymore="Non riesco a  portare nient'altro.";
 char* cobrabitten="Il cobra mi ha morso!";
 char* donthavethat="Non l'ho con me.";
 char* wowpassage="Wow! Ora posso andare a sud passando sulla trave.";
@@ -159,7 +155,7 @@ char* skeletongoesout="Lo scheletro se lo mette sulle spalle, poi tira una "
         "leva e una scala scende dal soffitto.";
 char* mummythanks="La mummia dice: -Grazie, straniero, era proprio ora che "
         "qualcuno passasse! Ora potro' passare altri duemila anni in pace-"
-        " prende le bende e se ne va";
+        " prende le bende e se ne va.";
 char* nothingtoopen="Qui non c'e' nulla da aprire.";
 char* itsopen="Ma e' aperta!";
 char* nothingtodoit="Non ho nulla per farlo.";
@@ -167,7 +163,7 @@ char* stillcantdothat="Ancora non posso farlo.";
 char* letstry="Proviamo";
 char* nothinghappens="Non accade nulla.";
 char* itworkscobraaway="Funziona! Il cobra si allontana.";
-char* getheretreasures="Dice: portare qui i tesori.";
+char* getheretreasures="Dice: -portare qui i tesori.-";
 char* sayswaveme="Dice: ondeggiami.";
 char* passageopens="Incredibile! Il muro si illumina e appare un passaggio che "
         "porta di sotto.";

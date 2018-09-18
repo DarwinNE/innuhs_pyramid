@@ -1,10 +1,6 @@
 #ifndef __ITALIAN_H__
 #define __ITALIAN_H__
 
-// Number of complete descriptions of objects
-#define LO 41
-#define NV 32
-
 // Object descriptions
 char* obj[22]=
     {"",
@@ -95,11 +91,11 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
 #endif
 
 // Abbreviated names
-char *namesabb[LO] = {"", "torc", "key ", "gird", "sign", "door",
+char *namesabb[NN] = {"", "torc", "key ", "gird", "sign", "door",
     "flut", "skul", "neck", "skel", "alta", "band", "axe ", "batt", "drug",
     "cobr", "sapp", "swor", "vase", "sarc", "mask", "mumm", "sand", "room",
     "hier", "room", "hall", "tunn", "ladd", "nort", "sout", "east", "west",
-    "up  ", "down", "n   ", "s   ", "e   ", "w   ", "abov", "belo"};
+    "up  ", "down", "n   ", "s   ", "e   ", "w   ", "abov", "belo", "arou"};
 
 // Abbreviated verbs
 char *verbsabb[NV] = {"",   "poin", "exit", "inve", "i   ", "see ", "go  ",

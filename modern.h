@@ -7,10 +7,10 @@
 
 void waitscreen(void) {}
 
-void inputtxt(void) {printf("\033[1m\x1b[32m");}
-void evidence1(void) {printf("\033[1m\x1b[31m");}
-void evidence2(void) {}
-void normaltxt(void) {printf("\033[0m\x1b[36m");}
+void inputtxt(void) {printf("\033[1m\x1b[32m\33[40m");}
+void evidence1(void) {printf("\033[1m\x1b[31m\33[40m");}
+void evidence2(void) {printf("\033[0m\x1b[93m\33[40m");}
+void normaltxt(void) {printf("\033[0m\x1b[36m\33[40m");}
 void tab(void) {printf("\t");}
 void wait1s(void)
 {
@@ -19,10 +19,10 @@ void wait1s(void)
 
     while (time(0) < retTime);            // Loop until it arrives.
 }
-void init_term(void) {normaltxt();}
+void init_term(void) {normaltxt();printf("\n\n");}
 
 void leave(void) 
 {
-    printf("\033[0m");
+    printf("\033[0m\n\n");
 }
 #endif

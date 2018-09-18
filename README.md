@@ -4,7 +4,7 @@ Originally on TI99/4A by Aristide Torrelli (MCmicrocomputer 33, sett. 1984).
 ZX Spectrum version by Manlio Severi, (MCmicrocomputer 35, nov. 1984).
 C language transcription, improvements and English translation by Davide Bucci.
 
-Remarkably enough, in the original version of the game, the name of the pyramid is Iunnuh, and not Innuh. As you surely know, hieroglyphs do not use vocals, the second variant comes from a different transliteration of the pharaoh's cartouche (more seriously, I mis-read the title of the game and I did not realise for 25 years!)
+Remarkably enough, in the original version of the game, the name of the pyramid is Iunnuh, and not Innuh. As you surely know, hieroglyphs do not use vocals, the second variant comes from a different transliteration of the pharaoh's cartouche found in the pyramid (more seriously, I mis-read the title of the game and I did not realise for 25 years!)
 
 This game is a text adventure. You should play it by giving simple orders to your alter-ego in the game. Explore the situations and beware to the risks!
 
@@ -45,7 +45,7 @@ sarcophagus, mask, mommy, sand, room, hieroglyphic, room, hallway,
 tunnel, ladder, north, south, east, west, up, down, n, s, e, w, above, below,
 switch off, exit, inventary, i, look, go, run, walk, see, take, grab, put, 
 leave, give , open, *, play, read, wave, dig, eqt, drink, close,
-breqk, destroy, light, switch off, jump, change
+breqk, destroy, light, switch off, jump, change, around
 ```
 
 Here is the list for the version in Italian:
@@ -56,8 +56,10 @@ maschera, mummia, sabbia, stanza, geroglifico, sala, corridoio, cunicolo, scala,
 nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, punteggio, arrenditi,
 inventario, i, guarda, vai, corri, cammina, esamina, prendi, piglia, posa, 
 lascia, dai , apri, *, suona, leggi, ondeggia, scava, mangia, bevi, chiudi,
-rompi, sfonda, accendi, spegni, salta, cambia
+rompi, sfonda, accendi, spegni, salta, cambia, attorno
 ```
 
+Here a few hints:
+* to repeat the description of the current location, type `look around` (`esamina attorno`) or `see` (`vedi`) or `*`.
 
 
