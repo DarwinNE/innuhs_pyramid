@@ -144,7 +144,7 @@ void (*actions[NV])(void) ={NULL,&punteggio,&resa,&inventario,
     &inventario,&esamina,&vai,&vai,
     &vai,&esamina,&prendi,&prendi,&posa,&posa,&posa,&apri,
     &guarda,&suona,&leggi,&ondeggia,&scava,&mangia,&bevi,&chiudi,
-    &rompi,&rompi,&accendi,&spegni,&salta,&insulta,&insulta,&cambia};
+    &posa,&rompi,&accendi,&spegni,&salta,&insulta,&prendi,&cambia};
 
 
 int main(int argc, char** argv)
@@ -827,7 +827,7 @@ void posa(void)
 void apri(void)
 {
     if(numberObject!=5) {
-        writeln("Uhu?!");
+        writeln(what);
         return;
     }
     if(currentPosition!=5) {

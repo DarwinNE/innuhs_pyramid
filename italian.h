@@ -101,8 +101,8 @@ char *namesabb[NN] = {"", "torc", "chia", "trav", "scri", "port",
 // Abbreviated verbs
 char *verbsabb[NV] = {"", "punt", "arre", "inve", "i   ", "guar", "vai ",
     "corr", "camm", "esam", "pren", "pigl", "posa", "lasc", "dai ", "apri",
-    "*   ", "suon", "legg", "onde", "scav", "mang", "bevi", "chiu", "romp",
-    "sfon", "acce", "speg", "salt", "vaff", "crep", "camb"};
+    "*   ", "suon", "legg", "onde", "scav", "mang", "bevi", "chiu", "mett",
+    "sfon", "acce", "speg", "salt", "vaff", "affe", "camb"};
 
 
 char *cunicolostretto=
@@ -194,6 +194,8 @@ char* stopinsulting="Smettila di imprecare ed usa il cervello!";
 char* letssaywedidnotunderstand="Beh, facciamo finta di non aver capito...";
 char* idonthavebatteries="Non ho batterie cariche con me.";
 char* batteriesstillok="Quelle che ci sono vanno ancora bene.";
+char* what="Cosa?";
+
 
 // the '\b' character is used to pause the execution in a very small screen
 

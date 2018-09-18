@@ -45,7 +45,7 @@ sarcophagus, mask, mommy, sand, room, hieroglyphic, room, hallway,
 tunnel, ladder, north, south, east, west, up, down, n, s, e, w, above, below,
 switch off, exit, inventary, i, look, go, run, walk, see, take, grab, put, 
 leave, give , open, *, play, read, wave, dig, eqt, drink, close,
-breqk, destroy, light, switch off, jump, change, around
+grab, destroy, light, switch off, jump, change, around, get
 ```
 
 Here is the list for the version in Italian:
@@ -56,10 +56,11 @@ maschera, mummia, sabbia, stanza, geroglifico, sala, corridoio, cunicolo, scala,
 nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, punteggio, arrenditi,
 inventario, i, guarda, vai, corri, cammina, esamina, prendi, piglia, posa, 
 lascia, dai , apri, *, suona, leggi, ondeggia, scava, mangia, bevi, chiudi,
-rompi, sfonda, accendi, spegni, salta, cambia, attorno
+rompi, sfonda, accendi, spegni, salta, cambia, attorno, afferra
 ```
 
 Here a few hints:
-* to repeat the description of the current location, type `look around` (`esamina attorno`) or `see` (`vedi`) or `*`.
+* To repeat the description of the current location, type `look around` (`esamina attorno`) or `see` (`vedi`) or simply `*`.
+* You are not Hercules and you can not carry too many objects with you.
 
 

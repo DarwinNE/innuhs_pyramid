@@ -100,8 +100,8 @@ char *namesabb[NN] = {"", "torc", "key ", "gird", "sign", "door",
 // Abbreviated verbs
 char *verbsabb[NV] = {"",   "poin", "exit", "inve", "i   ", "see ", "go  ",
     "run ", "walk", "look", "take", "grab", "put ", "leav", "give", "open",
-    "*   ", "play", "read", "wave", "dig ", "eat ", "drin", "clos", "brea",
-    "dest", "ligh", "swit", "jump", "fuck", "die ", "chan"};
+    "*   ", "play", "read", "wave", "dig ", "eat ", "drin", "clos", "drop",
+    "dest", "ligh", "swit", "jump", "fuck", "get ", "chan"};
 
 char *cunicolostretto=
     "in a narrow tunnel, with a trench too large to be jumped across.";
@@ -192,6 +192,7 @@ char* stopinsulting="Stop cursing and use your brain!";
 char* letssaywedidnotunderstand="Let's say that I did not understand...";
 char* idonthavebatteries="I do not have charged batteries with me.";
 char* batteriesstillok="Those already in are still working fine.";
+char* what="What?";
 
 // the '\b' character is used to pause the execution in a very small screen
 
