@@ -30,7 +30,7 @@ char* obj[22]=
 // Description of places, short version
 char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the desert",
-    "in the desert, in front of you there is a pyramid.",
+    "in the desert, in front of me there is a pyramid.",
     "in the antechamber of the Innuh's pyramid.",
     "in a triangular room.",
     "in a white room. A sapphire is set on the wall.",
@@ -54,7 +54,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
 // Description of places, longer version.
 char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the desert",
-    "in the desert, in front of a pyramid. Tall and huge, it is "
+    "in the desert, in front of me there is a pyramid. Tall and huge, it is "
     "the tomb of the ancient pharaoh Innuh.",
     "in the antechamber of the Innuh's pyramid. Unadorned, the walls bear "
     "still  visible the holes used to hoist the magnificent sarcophagus during "
