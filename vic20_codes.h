@@ -23,6 +23,18 @@ void inputtxt(void) {printf(green);}
 void evidence1(void) {printf(red);}
 void evidence2(void) {printf(yellow);}
 void tab(void) {}
+
+void wait1s(void)
+{
+    unsigned int retTime;
+    int r=5;
+    // Implement a dull loop!
+    for(retTime=0; retTime<1000;++retTime){
+        r*=5;
+        r/=5;
+    }
+}
+
 void leave(void) 
 {
     char* screen_col=(char*)36879;

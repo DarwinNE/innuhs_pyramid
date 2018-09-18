@@ -36,23 +36,26 @@ The following files will be created:
 I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).
 
 Here is the list of words understood by the game, while playing the version in English:
-```torch, key, girder, sign, door, flute, skull, necklace, skeleton,
+```
+torch, key, girder, sign, door, flute, skull, necklace, skeleton,
 altar, bandages, axe, batteries, drugs, cobra, sapphire, sword, vase,
 sarcophagus, mask, mommy, sand, room, hieroglyphic, room, hallway,
 tunnel, ladder, north, south, east, west, up, down, n, s, e, w, above, below,
 switch off, exit, inventary, i, look, go, run, walk, see, take, grab, put, 
 leave, give , open, *, play, read, wave, dig, eqt, drink, close,
-breqk, destroy, light, switch off, jump, change```
-
+breqk, destroy, light, switch off, jump, change
+```
 
 Here is the list for the version in Italian:
-```torcia, chiave, trave, scritta, porta, flauto, teschio, collana, scheletro,
+```
+torcia, chiave, trave, scritta, porta, flauto, teschio, collana, scheletro,
 altare, bende, scure, batterie, droghe, cobra, zaffiro, spada, vaso, sarcofago,
 maschera, mummia, sabbia, stanza, geroglifico, sala, corridoio, cunicolo, scala,
 nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, punteggio, arrenditi,
 inventario, i, guarda, vai, corri, cammina, esamina, prendi, piglia, posa, 
 lascia, dai , apri, *, suona, leggi, ondeggia, scava, mangia, bevi, chiudi,
-rompi, sfonda, accendi, spegni, salta, cambia```
+rompi, sfonda, accendi, spegni, salta, cambia
+```
 
 
 

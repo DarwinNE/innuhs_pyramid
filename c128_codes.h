@@ -9,6 +9,12 @@
 #define yellow      "\x9E"
 #define cls         "\x93"
 
+#include<time.h>
+void wait1s(void)
+{
+    unsigned int retTime = time(0) + 1;   // Get finishing time.
+    while (time(0) < retTime);            // Loop until it arrives.
+}
 
 #define LONGVERSION
 
@@ -29,6 +35,7 @@ void inputtxt(void) {printf(green);}
 void evidence1(void) {printf(red);}
 void evidence2(void) {printf(yellow);}
 void tab(void) {printf("        ");}
+
 void leave(void) 
 {
     printf(cyan);

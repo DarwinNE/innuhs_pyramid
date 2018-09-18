@@ -389,16 +389,16 @@ void interrogationAndAnalysis(void)
     numberObject = 0;
     lc=readln();
     
-    for(i=0; i<lc; ++i) {
-        if(playerInput[i]==' ')
+    for(ls=0; ls<lc; ++ls) {
+        if(playerInput[ls]==' ')
             break;
-        s[i]=playerInput[i];
-        ++ls;
+        s[ls]=playerInput[ls];
     }
+    // ls now contains the length of the first word.
     ols=ls;
     // Compensate for strings smaller than 4 chars
     if(ls<4) {
-        for(x=0; x<=4-ls;++x)
+        for(x=0; x<=4-ols;++x)
             s[ls++]=' ';
     }
     // Truncate s if it is longer than 4 chars
@@ -415,9 +415,10 @@ void interrogationAndAnalysis(void)
         }
     }
 
-
+    //printf("object: %s, recognized: %d \n",s, flag);
+    
     if (!flag) {
-        verb=6;
+        verb=6;     // By default verb is "go".
         strncpy(foundName,s, BUFFERSIZE);
     } else {
         flag=false;
@@ -431,7 +432,6 @@ void interrogationAndAnalysis(void)
             }
         }
         strncpy(foundName,&playerInput[nounpos], BUFFERSIZE);
-
         lf=strlen(foundName);
         if(lf<4) {
             int w;
@@ -439,8 +439,6 @@ void interrogationAndAnalysis(void)
                 foundName[lf+w]=' ';
             foundName[lf+w]='\0';
         }
-        
-
     }
     strncpy(q,foundName,BUFFERSIZE);
     if (strlen(foundName)>=4)
@@ -768,7 +766,13 @@ void suona(void)
 */
 void suspence(void)
 {
-    writesameln("... ");
+    writesameln(".");
+    wait1s();
+    writesameln(".");
+    wait1s();
+    writesameln(".");
+    wait1s();
+    writesameln(" ");
 }
 
 /** leggi
