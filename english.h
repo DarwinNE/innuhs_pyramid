@@ -58,22 +58,22 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
 // Description of places, longer version.
 char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the desert",
-    "in the desert, in front of you there is a pyramid. Tall and huge, it is "
+    "in the desert, in front of a pyramid. Tall and huge, it is "
     "the tomb of the ancient pharaoh Innuh.",
     "in the antechamber of the Innuh's pyramid. Unadorned, the walls bear "
     "still  visible the holes used to hoist the magnificent sarcophagus during "
     "the funeral  ceremony.",
     "in a triangular room. Someone has been here in the past. Many traces are "
-    "visible, but the dust now covers them completely. The last visitor must "
+    "visible, but the dust now covers them. The last visitor must "
     "have come here at least one year ago.",
     "in a white room. Colour comes from the perfectly polished marble employed "
     "  for the walls. The alignment of the marble plates is "
     "astounding.\nA sapphire is set in the centre of one of the walls.",
     "in a small recess, inside the stone wall.",
-    "in a long hallway, paved with stones of different sizes, drawing "
+    "in a long hallway, paved with stones of different sizes, tracing "
     "irregular  patterns on the ground.",
     "in a room with red granite walls.",
-    "in a small room.",
+    "in a small room, with the pharaoh's cartouche visible on the ceiling.",
     "in the alchemist's laboratory. Instruments have been stolen long ago, but "
     "  smoke and traces of chemical substances still stain the walls.",
     "in the embalmer's room, beautifully decorated with multicolour paintings.",
@@ -91,7 +91,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "the Nut goddess rising among sycamore leaves covers the vault in "
     "a colourful and living portrait on a blue starry background.",
     "in the funerary chapel. Figures from the Book of the Dead are painted on "
-    "the walls, with the Anubi god weighing the heart."};
+    "the walls, with among other things Anubi weighing the heart of the dead."};
 #endif
 
 // Abbreviated names

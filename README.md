@@ -4,6 +4,8 @@ Originally on TI99/4A by Aristide Torrelli (MCmicrocomputer 33, sett. 1984).
 ZX Spectrum version by Manlio Severi, (MCmicrocomputer 35, nov. 1984).
 C language transcription, improvements and English translation by Davide Bucci.
 
+Remarkably enough, in the original version of the game, the name of the pyramid is Iunnuh, and not Innuh. As you surely know, hieroglyphs do not use vocals, the second variant comes from a different transliteration of the pharaoh's cartouche (more seriously, I mis-read the title of the game and I did not realise for 25 years!)
+
 This game is a text adventure. You should play it by giving simple orders to your alter-ego in the game. Explore the situations and beware to the risks!
 
 *The Innuh's pyramid was built three thousand years ago, somewhere in the desert.*

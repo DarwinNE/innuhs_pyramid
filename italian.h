@@ -30,6 +30,8 @@ char* obj[22]=
     "una *maschera d'oro*",
     "una mummia con le bende sporche"};
 
+#ifndef LONGVERSION
+
 // Description of places
 char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "nel deserto, di fronte c'e' una piramide.",
@@ -52,6 +54,46 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "nella sala dei geroglifici.",
     "nella sala di Hanyke.",
     "nella cappella funeraria."};
+#else
+// Description of places, longer version.
+char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
+    "nel deserto, di fronte ad una piramide. Alta e maestosa, e' la tomba dell'"
+    "antico faraone Innuh.",
+    "nell'anticamera della piramide di Innuh. Le pareti sono in nuda pietra "
+    "appena sgrossata, ma portano ancora i segni degli appigli usati durante "
+    "la cerimonia funebre per issare il sarcofago.",
+    "in una stanza triangolare. Qualcuno e' già stato qui in passato. Molte "
+    "tracce sono visibili, ma la polvere le ha ricoperte. Probabilmente, "
+    "l'ultimo visitatore e' stato qui non meno di un anno fa.",
+    "in una sala bianca. Il colore viene dal marmo perfettamente levigato "
+    "che fodera le pareti con lastre perfettamente allineate. Uno zaffiro e' "
+    "incastonato al centro di una parete.",
+    "in una nicchia ricavata nella pietra.",
+    "in un lungo corridoio, lastricato di pietre di taglia diversa che "
+    "tracciano un percorso irregolare sul pavimento.",
+    "in una sala con i muri foderati di granito rosso.",
+    "in una saletta, con il cartiglio del faraone visibile sul soffitto.",
+    "nella sala dell'alchimista. I suoi strumenti di lavoro sono stati rubati "
+    "molti secoli fa, ma il fumo e le tracce delle sostanze chimiche hanno "
+    "lasciato tracce ancora visibili sui muri.",
+    "nella sala dell'imbalsamatore, decorata con grandi affreschi policromi.",
+    "nella stanza di Iankho, il gran sacerdote.",
+    "in un tunnel.",
+    "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
+    "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
+    "in una stanza verde.",
+    "in un cunicolo stretto con un fosso troppo largo da saltare.",
+    "nella vecchia armeria, provvista di ganci di bronzo, corrosi ma ancora "
+    "visibili sulle pareti. ",
+    "nella sala dei geroglifici. Sono incisi su tutti i muri e probabilmente "
+    "descrivono le antiche formule dell'alchimista.",
+    "nella sala di Hanyke. Era la sposa del faraone Innuh e la sua effigie "
+    "nelle vesti della dea Nut che sorge fra i rami di sicomoro copre tutta "
+    "la volta della stanza in un vivido e colorato ritratto su uno sfondo "
+    "di un cielo blu pieno di stelle.",
+    "nella cappella funeraria. Figure del Libro dei Morti sono dipinte sulle "
+    "pareti. Si vede il dio Anubi che pesa il cuore di un defunto."};
+#endif
 
 // Abbreviated names
 char *namesabb[LO] = {"", "torc", "chia", "trav", "scri", "port",
