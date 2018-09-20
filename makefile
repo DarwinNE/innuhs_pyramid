@@ -1,4 +1,4 @@
-all:    modern_en modern_it c128_en vic20_en c64_en c128_it vic20_it c64_it clean
+all:    modern_en modern_it c128_en vic20_en c64_en pet_en c128_it vic20_it c64_it pet_it plus4_en plus4_it clean
 
 modern_en:
 	gcc innuh.c -o innuh-en
@@ -21,6 +21,17 @@ c64_en:
 	cl65 innuh-c64-en.s -t c64 -o innuh-c64-en.prg
 	rm innuh-c64-en.s
 
+pet_en:
+	cc65 innuh.c -t pet -D PET -o innuh-pet-en.s
+	cl65 innuh-pet-en.s -t pet -o innuh-pet-en.prg
+	rm innuh-pet-en.s
+
+plus4_en:
+	cc65 innuh.c -t plus4 -D PLUS4 -o innuh-plus4-en.s
+	cl65 innuh-plus4-en.s -t plus4 -o innuh-plus4-en.prg
+	rm innuh-plus4-en.s
+
+
 c128_it:
 	cc65 innuh.c -t c128 -D C128 -D ITALIAN -o innuh-c128-it.s
 	cl65 innuh-c128-it.s -t c128 -o innuh-c128-it.prg
@@ -35,6 +46,16 @@ c64_it:
 	cc65 innuh.c -t c64 -D C64 -D ITALIAN -o innuh-c64-it.s
 	cl65 innuh-c64-it.s -t c64 -o innuh-c64-it.prg
 	rm innuh-c64-it.s
+
+pet_it:
+	cc65 innuh.c -t pet -D PET -D ITALIAN -o innuh-pet-it.s
+	cl65 innuh-pet-it.s -t pet -o innuh-pet-it.prg
+	rm innuh-pet-it.s
+
+plus4_it:
+	cc65 innuh.c -t plus4 -D PLUS4 -D ITALIAN -o innuh-plus4-it.s
+	cl65 innuh-plus4-it.s -t plus4 -o innuh-plus4-it.prg
+	rm innuh-plus4-it.s
 
 clean:
 	rm *.o

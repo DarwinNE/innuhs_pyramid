@@ -33,12 +33,19 @@
 
 #include"innuh.h"
 
+int colc=0;
+
+
 #ifdef C128
     #include"c128_codes.h"
 #elif defined(VIC20)
     #include"vic20_codes.h"
 #elif defined(C64)
     #include"c64_codes.h"
+#elif defined(PLUS4)
+    #include"cplus4_codes.h"
+#elif defined(PET)
+    #include"cpet_codes.h"
 #else
     #include"modern.h"
 #endif
@@ -161,7 +168,6 @@ int main(int argc, char** argv)
 }
 
 char wordbuffer[NCOL*2];
-int colc=0;
 
 void writesameln(char *line)
 {

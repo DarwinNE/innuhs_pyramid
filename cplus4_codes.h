@@ -11,22 +11,22 @@
 // The number of columns of the screen
 #define NCOL 40
 
-#include<time.h>
 void wait1s(void)
 {
-    unsigned int retTime = time(0) + 1;   // Get finishing time.
-    while (time(0) < retTime);            // Loop until it arrives.
+    unsigned int retTime;
+    int r=5;
+    // Implement a dull loop!
+    for(retTime=0; retTime<1000;++retTime){
+        r*=5;
+        r/=5;
+    }
 }
-
 #define LONGVERSION
 
 void waitscreen(void) {printf("[return]"); getchar();}
 void normaltxt(void)    {printf(cyan);}
 void init_term(void) 
-{   
-    char* screen_col=(char*)53280;
-    *screen_col=0;
-    screen_col=(char*)53281;
+{   char* screen_col=(char*)65301;
     *screen_col=0;
     printf(cls);
     normaltxt();
