@@ -9,6 +9,9 @@
 #define yellow      "\x9E"
 #define cls         "\x93"
 
+// The number of columns of the screen
+#define NCOL 80
+
 #include<time.h>
 void wait1s(void)
 {

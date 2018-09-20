@@ -7,6 +7,9 @@
 
 void waitscreen(void) {}
 
+// The number of columns of the screen
+#define NCOL 80
+
 void inputtxt(void) {printf("\033[1m\x1b[32m\33[40m");}
 void evidence1(void) {printf("\033[1m\x1b[31m\33[40m");}
 void evidence2(void) {printf("\033[0m\x1b[93m\33[40m");}

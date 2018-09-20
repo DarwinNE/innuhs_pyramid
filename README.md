@@ -43,7 +43,7 @@ torch, key, girder, sign, door, flute, skull, necklace, skeleton,
 altar, bandages, axe, batteries, drugs, cobra, sapphire, sword, vase,
 sarcophagus, mask, mommy, sand, room, hieroglyphic, room, hallway,
 tunnel, ladder, north, south, east, west, up, down, n, s, e, w, above, below,
-switch off, exit, inventary, i, look, go, run, walk, see, take, grab, put, 
+switch (off), exit, inventary, i, look, go, run, walk, see, take, grab, put, 
 leave, give , open, *, play, read, wave, dig, eqt, drink, close,
 grab, destroy, light, switch off, jump, change, around, get
 ```
@@ -53,14 +53,16 @@ Here is the list for the version in Italian:
 torcia, chiave, trave, scritta, porta, flauto, teschio, collana, scheletro,
 altare, bende, scure, batterie, droghe, cobra, zaffiro, spada, vaso, sarcofago,
 maschera, mummia, sabbia, stanza, geroglifico, sala, corridoio, cunicolo, scala,
-nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, punteggio, arrenditi,
+nord, sud, est, ovest, su, giù, n, s, e, o, sopra, sotto, arrenditi,
 inventario, i, guarda, vai, corri, cammina, esamina, prendi, piglia, posa, 
 lascia, dai , apri, *, suona, leggi, ondeggia, scava, mangia, bevi, chiudi,
 rompi, sfonda, accendi, spegni, salta, cambia, attorno, afferra
 ```
 
-Here a few hints:
+Here are a few hints:
 * To repeat the description of the current location, type `look around` (`esamina attorno`) or `see` (`vedi`) or simply `*`.
 * You are not Hercules and you can not carry too many objects with you.
+* Use `inventary` (`inventario`) or `i` to know what you are carrying around.
+* All verbs and nouns can be abbreviated using the first four letters.
 
 

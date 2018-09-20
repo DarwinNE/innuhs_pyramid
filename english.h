@@ -27,7 +27,7 @@ char* obj[22]=
     "a mummy with dirty bandages"};
 
 #ifndef LONGVERSION
-// Description of places, short version
+// Description of places, short version.
 char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the desert",
     "in the desert, in front of me there is a pyramid.",
@@ -46,7 +46,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in a tunnel. An ancient writing says: do not pass, or YOU'LL DIE.",
     "in a green room",
     "in a narrow tunnel, with a trench too wide to be jumped across.",
-    "in the old armory.",
+    "in the old armoury.",
     "in the hieroglyphic's room.",
     "in Hanyke's room.",
     "in the funerary chapel."};
@@ -84,10 +84,11 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the hieroglyphics' room. They are carved in the wall, they seem "
     "to describe ancient formulas and spells for alchemists.",
     "in Hanyke's room. She was the wife of the pharaoh and her effigy as "
-    "the Nut goddess rising among sycamore leaves covers the vault in "
+    "the goddess Nut rising among sycamore leaves covers the vault in "
     "a colourful and living portrait on a blue starry background.",
     "in the funerary chapel. Figures from the Book of the Dead are painted on "
-    "the walls, with among other things Anubi weighing the heart of the dead."};
+    "the walls, with among other things Anubis weighing the heart of the "
+    "dead."};
 #endif
 
 // Abbreviated names
@@ -98,7 +99,7 @@ char *namesabb[NN] = {"", "torc", "key ", "gird", "sign", "door",
     "up  ", "down", "n   ", "s   ", "e   ", "w   ", "abov", "belo", "arou"};
 
 // Abbreviated verbs
-char *verbsabb[NV] = {"",   "poin", "exit", "inve", "i   ", "see ", "go  ",
+char *verbsabb[NV] = {"",   "piss", "exit", "inve", "i   ", "see ", "go  ",
     "run ", "walk", "look", "take", "grab", "put ", "leav", "give", "open",
     "*   ", "play", "read", "wave", "dig ", "eat ", "drin", "clos", "drop",
     "dest", "ligh", "swit", "jump", "fuck", "get ", "chan"};
@@ -134,7 +135,7 @@ char* nothing="Nothing.";
 char* idonotknowthisword="I don't understand this word.";
 char* idonotunderstand="I don't understand.";
 char* icantdothatyet="I can't do that, yet.";
-char* ifell="I fell and I break my neck!";
+char* ifell="I fell and I broke my neck!";
 char* cantgothere="I can't go over there!";
 char* dontknowthatword="I don't understand this word: ";
 char* somethingiswritten="Something is written on it.";
@@ -152,8 +153,8 @@ char* donthavethat="I do not have that with me.";
 char* wowpassage="Wow! Now I can go south by walking on the girder.";
 char* skeletongoesout="The skeleton puts the skull on his shoulders, then "
     "pulls a lever and a ladder   comes down from the ceiling.";
-char* mummythanks="The mommy says: -Thank you stranger, it was about time that "
-    "someone comes. Now I can rest in peace for another two thousands "
+char* mummythanks="The mummy says: -Thank you stranger, it was about time that "
+    "someone comes. Now I can rest in peace for another two thousand "
     "years.-  It then takes clean bandages and goes away.";
 char* nothingtoopen="There is anything to open here.";
 char* itsopen="It's already open!";
@@ -165,8 +166,8 @@ char* itworkscobraaway="It works! The cobra goes away.";
 char* getheretreasures="It tells: -collect here your treasures-";
 char* sayswaveme="It says: -wave me-";
 char* passageopens="\nIt's incredible! The wall lights up and a passage "
-    "appears, bringing downstairs.";
-char* inawhiteroom="in a white room, with a passage towards downstairs.";
+    "appears, leading downstairs.";
+char* inawhiteroom="in a white room, with a passage leading downstairs.";
 char* ionlyhavehandstodig="I only have my bare hands. I can only dig the sand.";
 char* idigwithmyhands="I dig with my bare hands and";
 char* ifoundsomething="I find something!";
@@ -178,12 +179,12 @@ char* idontdrink="I won't drink that!";
 char* betterleaveopen="Better leave that open. Who knows?";
 char* ifyoulikebreaking="If you like breaking things, you should definitely "
     "choose another type of game!";
-char* dontjoke="Don's make jokes.";
+char* dontjoke="Don't make jokes.";
 char* idonothaveit="I don't have that with me.";
 char* alreadyon="It's already on.";
 char* batterydischarged="I can't do that, batteries are dead!";
 char* explainyourself="Explain yourself.";
-char* cantdothat="I cant't do that.";
+char* cantdothat="I can't do that.";
 char* alreadyoff="It's already switched off.";
 char* lookbuddy="Listen, the adventure will be long if you start this way!";
 char* youshouldtry="For me, the situation is quite difficult. You should try "

@@ -99,7 +99,7 @@ char *namesabb[NN] = {"", "torc", "chia", "trav", "scri", "port",
     "su  ", "giu ", "n   ", "s   ", "e   ", "o   ", "sopr", "sott","atto"};
 
 // Abbreviated verbs
-char *verbsabb[NV] = {"", "punt", "arre", "inve", "i   ", "guar", "vai ",
+char *verbsabb[NV] = {"", "crep", "arre", "inve", "i   ", "guar", "vai ",
     "corr", "camm", "esam", "pren", "pigl", "posa", "lasc", "dai ", "apri",
     "*   ", "suon", "legg", "onde", "scav", "mang", "bevi", "chiu", "mett",
     "sfon", "acce", "speg", "salt", "vaff", "affe", "camb"};

@@ -23,7 +23,7 @@
     p12         passaggio12
     to1         torchIsOn
     zz          numberOfObjects
-    c1          doorIsOpen
+    c1          doorIsClosed
     c2          cobraIsPresent
     fbc         chargeOfBatteries
 */
@@ -40,6 +40,8 @@
 #else
     #include"modern.h"
 #endif
+
+#define IMPROVED_PARSER
 
 // Number of complete descriptions of objects
 #define LO 41
@@ -79,7 +81,7 @@ char foundName[BUFFERSIZE];
 char playerInput[BUFFERSIZE];
 
 // Door state (true: close, false: open)
-boolean doorIsOpen;
+boolean doorIsClosed;
 
 // Cobra (true: is present, false: is absent)
 boolean cobraIsPresent;
@@ -97,14 +99,10 @@ int verb=0;
 
 int numberOfObjects;
 
-char buffer[BUFFERSIZE];
-
 boolean isDead;
 
 // Batteries charged or not
 int chargeOfBatteries;
-char* istring;
-
 
 // Connections between places
 int pcon[25][7] =
@@ -140,7 +138,7 @@ const int objloc_org[] = {0,1,0,3,4,5,6,8,9,10,11,11,11,
     12,13,15,15,16,22,24,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
-void (*actions[NV])(void) ={NULL,&punteggio,&resa,&inventario,
+void (*actions[NV])(void) ={NULL,&insulta,&resa,&inventario,
     &inventario,&esamina,&vai,&vai,
     &vai,&esamina,&prendi,&prendi,&posa,&posa,&posa,&apri,
     &guarda,&suona,&leggi,&ondeggia,&scava,&mangia,&bevi,&chiudi,
@@ -151,7 +149,7 @@ int main(int argc, char** argv)
 {
     init_term();
     setup();
-    presentation();
+    writeln(gamepres);
     while(!isDead)
         play();
 
@@ -159,51 +157,69 @@ int main(int argc, char** argv)
     return 0;
 }
 
-void presentation(void)
-{
-    writeln(gamepres);
-}
+char wordbuffer[NCOL*2];
+int colc=0;
 
-
-void process(char *line)
+void writesameln(char *line)
 {
-    int i;
+    int i=0;
     boolean flag=false;
+    boolean norm=false;
     char c;
+    int pc=0;
 
-    for(i=0; (c=line[i])!=0;++i) {
+    while(1){
+        c=line[i++];
         if(c=='*' && flag==false) {
             evidence2();
             flag=true;
         } else if(c=='*' && flag==true) {
-            normaltxt();
+            norm=true;
             flag=false;
         } else if(c=='-' && flag==false) {
             evidence1();
             flag=true;
         } else if(c=='-' && flag==true) {
-            normaltxt();
+            norm=true;
             flag=false;
         } else if(c=='\b') {
             waitscreen();
         } else if(c=='\t') {
             tab();
+        } else if(c==' ' || c=='\n'||c=='\0') {
+            wordbuffer[pc]='\0';
+            if(colc>=NCOL) {
+                printf("\n");
+                colc=strlen(wordbuffer);
+            } 
+            printf("%s",wordbuffer);
+            if(norm==true) {
+                normaltxt();
+                norm=false;
+            }
+            if(c=='\0') 
+                return;
+            pc=0;
+            if(c=='\n') {
+                printf("\n");
+                colc=0;
+            } else if(colc<NCOL-1) {
+                printf(" ");
+                ++colc;
+            }
         } else {
-            putc(c, stdout);
+            wordbuffer[pc++]=c;
+            ++colc;
         }
     }
 }
 
 void writeln(char* line)
 {
-    process(line);
+    writesameln(line);
     printf("\n");
+    colc=0;
 }
-void writesameln(char* line)
-{
-    process(line);
-}
-
 
 void setup(void)
 {
@@ -216,7 +232,7 @@ void setup(void)
     passaggio12 = false;
     mummiaSegue = false;
     torchIsOn = false;
-    doorIsOpen = true;
+    doorIsClosed = true;
     cobraIsPresent = true;
     currentPosition = 1;
     numberOfObjects = 0;
@@ -244,9 +260,9 @@ void play(void)
 
     }
     // Adventure completed?
-    if((currentPosition==4)&&(objloc[8]==currentPosition)&&
-       (objloc[12]==currentPosition)&&(objloc[16]==currentPosition)&&
-       (objloc[18]==currentPosition)&&(objloc[20]==currentPosition)) {
+    if((currentPosition==4)&&(objloc[8]==4)&&
+       (objloc[12]==4)&&(objloc[16]==4)&&
+       (objloc[18]==4)&&(objloc[20]==4)) {
         theEnd();
         return;
     }
@@ -315,15 +331,14 @@ void sonovedo(void)
             fstsee=false;
             // one may test if the index i is valid...
             writesameln(obj[i]);
-            
         }
     }
     writeln("");
 
-    if(currentPosition==5 && doorIsOpen) {
+    if(currentPosition==5 && doorIsClosed) {
         writeln(doorclose);
     }
-    if(currentPosition==5 && !doorIsOpen) {
+    if(currentPosition==5 && !doorIsClosed) {
         writeln(dooropen);
     }
     writesameln(icangoto);
@@ -352,7 +367,6 @@ void dropDead(void)
 {
     writeln(iamdead);
     isDead=true;
-    return;
 }
 
 /** read a line of text and return the length of the line (remove the \n char).
@@ -373,6 +387,7 @@ int readln()
     return lc;
 }
 
+#ifdef IMPROVED_PARSER
 /** Improved parser, more flexible than the simpler version.
 */
 void interrogationAndAnalysis(void)
@@ -473,11 +488,11 @@ void interrogationAndAnalysis(void)
 
     //printf("object: %s, recognized: %d \n",foundName, found);
 }
-
+#else
 /** Simpler parsing function. It just take the first word as a verb (truncated
     to 4 chars and the last word as an object (truncated to 4 chars).
 */
-/*
+
 void interrogationAndAnalysis(void)
 {
     int app=0;
@@ -561,7 +576,8 @@ void interrogationAndAnalysis(void)
         numberObject=app;
     }
     //printf("object: %s, recognized: %d \n",foundName, flag);
-} */
+} 
+#endif
 
 void action(int vb)
 {
@@ -574,29 +590,6 @@ void action(int vb)
     
     if(pf!=NULL)
         (*pf)();
-    else
-        writeln("Unimplemented action.");
-    
-}
-
-/** Calcola il punteggio totale raggiunto.
-*/
-void punteggio(void)
-{
-    int der1 = 0;
-    if (objloc[8]==-1)
-        ++der1;
-    if (objloc[12]==-1)
-        ++der1;
-    if (objloc[18]==-1)
-        ++der1;
-    if (objloc[20]==-1)
-        ++der1;
-    if (objloc[16]==-1)
-        ++der1;
-
-    writesameln(yougot);
-    printf("%d%%\n",(der1*20+(der1>0?5:0)));
 }
 
 /** Esci
@@ -613,8 +606,7 @@ void inventario(void)
 {
     int gs = 0,i;
     writeln(ihavewithme);
-    for(i = 0; i<LO; ++i)
-    {
+    for(i = 0; i<LO; ++i) {
         if(objloc[i]==-1) {
             ++gs;
             writeln(obj[i]);
@@ -644,7 +636,7 @@ void vai(void)
     if(numberObject>34) {
         numberObject = numberObject - 6;
     }
-    if(currentPosition==5 && numberObject ==5 && !doorIsOpen) {
+    if(currentPosition==5 && numberObject ==5 && !doorIsClosed) {
         writeln("Ok.");
         currentPosition = pcon[currentPosition][1+1];
         --chargeOfBatteries;
@@ -834,7 +826,7 @@ void apri(void)
         writeln(nothingtoopen);
         return;
     }
-    if(!doorIsOpen) {
+    if(!doorIsClosed) {
         writeln(itsopen);
         return;
     }
@@ -843,10 +835,9 @@ void apri(void)
         return;
     }
     writeln("Ok.");
-    doorIsOpen=false;
+    doorIsClosed=false;
     pcon[5][1+1]=6;
     showDesc = true;
-    return;
 }
 
 
@@ -874,7 +865,6 @@ void suona(void)
     objloc[15]=0;
     cobraIsPresent=false;
     showDesc = true;
-    return; // goto 95
 }
 
 /** Wait for a few seconds.
@@ -904,7 +894,6 @@ void leggi(void)
     }
     if(numberObject==16 && objloc[16]==-1) {
         writeln(sayswaveme);
-        return;
     }
 }
 
@@ -928,7 +917,6 @@ void ondeggia(void)
         passaggio12=true;
         ploc[8]=inawhiteroom;
         showDesc=true;
-        return;
     }
 }
 
@@ -955,7 +943,6 @@ void scava(void)
         return;
     }
     writeln(idonotfindanything);
-    return;
 }
 
 /** Mangia
@@ -976,8 +963,6 @@ void mangia(void)
     writeln(badtaste);
     objloc[numberObject]=0;
     showDesc = true;
-    return;
-
 }
 
 /** Bevi
@@ -986,7 +971,6 @@ void bevi(void)
 {
     writeln(idontdrink);
     showDesc = true;
-    return;
 }
 
 /** Chiudi
@@ -994,7 +978,6 @@ void bevi(void)
 void chiudi(void)
 {
     writeln(betterleaveopen);
-    return;
 }
 
 
@@ -1003,7 +986,6 @@ void chiudi(void)
 void rompi(void)
 {
     writeln(ifyoulikebreaking);
-    return;
 }
 /** Accendi
 */
@@ -1028,7 +1010,6 @@ void accendi(void)
     writeln("Ok.");
     torchIsOn=true;
     showDesc = true;
-    return;
 }
 
 /** Spegni
@@ -1049,7 +1030,6 @@ void spegni(void)
     }
     writeln("Ok.");
     torchIsOn=false;
-    return;
 }
 
 
@@ -1066,7 +1046,6 @@ void salta(void)
         dropDead();
         return;
     }
-    return;
 }
 
 /** Insulta

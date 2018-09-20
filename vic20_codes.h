@@ -9,6 +9,10 @@
 #define yellow      "\x9E"
 #define cls         "\x93"
 
+// The number of columns of the screen
+#define NCOL 22
+
+
 void waitscreen(void) {printf("[return]"); getchar();}
 void normaltxt(void) {printf(cyan);}
 
