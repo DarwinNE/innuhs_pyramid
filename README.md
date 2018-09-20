@@ -17,7 +17,7 @@ reveal its secrets could come back to tell his adventure.*
 
 *__Good luck, you'll need it!__*
 
-The game is currently playable on the Commodore 128 (in 80-column mode), on the Commodore VIC-20 with the 16K RAM expansion, on the Commodore 64 and on a modern computer terminal.
+The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, PET with 32K and on a modern computer terminal.
 
 To compile sources, you will need:
 
