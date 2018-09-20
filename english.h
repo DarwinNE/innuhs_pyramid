@@ -4,27 +4,31 @@
 // Object descriptions
 char* obj[22]=
     {"",
-    "a torch",
-    "a key",
-    "a wooden girder",
-    "a sign",
-    "a door",
-    "a flute",
-    "a skull",
-    "a *necklace encrusted with diamonds*",
-    "a beheaded skeleton",
-    "an altar stained with blood",
-    "clean bandages",
-    "an *golden axe*",
-    "charged batteries",
-    "drugs",
-    "a cobra",
-    "a *sapphire*",
-    "a broken sword",
-    "an *ancient vase*",
-    "an open sarcophagus",
-    "a *golden mask*",
-    "a mummy with dirty bandages"};
+    "a torch",              // 1
+    "a key",                // 2
+    "a wooden girder",      // 3
+    "a sign",               // 4
+    "a door",               // 5
+    "a flute",              // 6
+    "a skull",              // 7
+    "a *necklace encrusted with diamonds*", // 8
+    NULL,                   // 9
+    "an altar stained with blood",  // 10
+    "clean bandages",       // 11
+    "a *golden axe*",       // 12
+    "charged batteries",    // 13
+    "drugs",                // 14
+    "a cobra",              // 15
+    "a *sapphire*",         // 16
+    "a broken sword",       // 17
+    "an *ancient vase*",    // 18
+    "an open sarcophagus",  // 19
+    "a *golden mask*",      // 20
+    "a mummy with dirty bandages"};     // 21
+
+char *skeletonb="a beheaded skeleton";
+char *skeletonh="A happy skeleton.";
+
 
 #ifndef LONGVERSION
 // Description of places, short version.
@@ -33,7 +37,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the desert, in front of me there is a pyramid.",
     "in the antechamber of the Innuh's pyramid.",
     "in a triangular room.",
-    "in a white room. A sapphire is set on the wall.",
+    NULL,
     "in a recess.",
     "in a hallway.",
     "in a red room.",
@@ -45,11 +49,15 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in a tunnel. An ancient writing says: do not pass, or YOU'LL DIE.",
     "in a tunnel. An ancient writing says: do not pass, or YOU'LL DIE.",
     "in a green room",
-    "in a narrow tunnel, with a trench too wide to be jumped across.",
+    NULL,
     "in the old armoury.",
     "in the hieroglyphic's room.",
     "in Hanyke's room.",
     "in the funerary chapel."};
+char* inawhiteroomo="in a white room, with a passage leading downstairs.";
+char* inawhiteroomc=
+    "in a white room. A sapphire is set on the wall.";
+
 #else
 // Description of places, longer version.
 char* ploc[25]= {"", "in the desert","in the desert","in the desert",
@@ -62,9 +70,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in a triangular room. Someone has been here in the past. Many traces are "
     "visible, but the dust now covers them. The last visitor must "
     "have come here at least one year ago.",
-    "in a white room. Colour comes from the perfectly polished marble employed "
-    "  for the walls. The alignment of the marble plates is "
-    "astounding.\nA sapphire is set in the centre of one of the walls.",
+    NULL,
     "in a small recess, inside the stone wall.",
     "in a long hallway, paved with stones of different sizes, tracing "
     "irregular  patterns on the ground.",
@@ -78,7 +84,7 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in a tunnel. An ancient writing says: do not pass, or YOU'LL DIE.",
     "in a tunnel. An ancient writing says: do not pass, or YOU'LL DIE.",
     "in a green room",
-    "in a narrow tunnel, with a trench too wide to be jumped across.",
+    NULL,
     "in the old armoury, with corroded bronze hooks still attached to the "
     "walls.",
     "in the hieroglyphics' room. They are carved in the wall, they seem "
@@ -89,6 +95,12 @@ char* ploc[25]= {"", "in the desert","in the desert","in the desert",
     "in the funerary chapel. Figures from the Book of the Dead are painted on "
     "the walls, with among other things Anubis weighing the heart of the "
     "dead."};
+
+char* inawhiteroomo="in a white room, with a passage leading downstairs.";
+char* inawhiteroomc=
+    "in a white room. Colour comes from the perfectly polished marble employed "
+    "for the walls. The alignment of the marble plates is "
+    "astounding.\nA sapphire is set in the centre of one of the walls.";
 #endif
 
 // Abbreviated names
@@ -109,8 +121,6 @@ char *cunicolostretto=
 char *cunicolocontrave=
     "in a narrow tunnel, with a trench too large to be jumped across. "
     "There is a girder, though, put there as a bridge.";
-
-char *scheletrocontento="A happy skeleton.";
 
 char* directions[7] = {"", "north", "south", "east", "west", "up  ",
     "down"};
@@ -167,7 +177,6 @@ char* getheretreasures="It tells: -collect here your treasures-";
 char* sayswaveme="It says: -wave me-";
 char* passageopens="\nIt's incredible! The wall lights up and a passage "
     "appears, leading downstairs.";
-char* inawhiteroom="in a white room, with a passage leading downstairs.";
 char* ionlyhavehandstodig="I only have my bare hands. I can only dig the sand.";
 char* idigwithmyhands="I dig with my bare hands and";
 char* ifoundsomething="I find something!";

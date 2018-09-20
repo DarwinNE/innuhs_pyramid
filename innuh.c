@@ -105,32 +105,33 @@ boolean isDead;
 int chargeOfBatteries;
 
 // Connections between places
+// not used, north, sud, east, west, up, down
 int pcon[25][7] =
     {{0,0,0,0,0,0,0}, // This index is not used
-    {0,2,4,2,1,0,0},        // 1 Deserto
-    {0,2,3,3,1,0,0},        // 2 Deserto
-    {0,2,5,2,4,0,0},        // 3 Deserto
-    {0,1,5,3,4,0,0},        // 4 Deserto
-    {0,4,0,3,0,0,0},        // 5 Deserto, di fronte ad una piramide
-    {0,5,10,7,8,0,0},       // 6 Anticamera
-    {0,0,10,0,6,0,0},       // 7 Stanza triangolare
-    {0,0,9,6,0,0,0},        // 8 Sala bianca
-    {0,8,0,10,0,0,0},       // 9 Nicchia
-    {0,6,0,7,9,0,0},        // 10 Corridoio
-    {0,0,13,14,0,0,0},      // 11
-    {0,0,15,13,0,0,10},     // 12
-    {0,11,15,14,12,0,0},    // 13
-    {0,11,0,0,13,0,0},      // 14
-    {0,13,0,0,12,0,0},      // 15
-    {0,0,0,17,0,8,0},       // 16
-    {0,0,0,18,16,0,0},      // 17
-    {0,0,21,19,17,0,0},     // 18
-    {0,0,0,0,18,0,0},       // 19
-    {0,0,0,21,0,0,0},       // 20
-    {0,18,0,22,20,0,0},
-    {0,0,0,0,21,0,0},
-    {0,20,24,0,0,0,0},
-    {0,23,0,0,0,0,0}};
+    {0,2,4,2,1,0,0},        // 1 Desert
+    {0,2,3,3,1,0,0},        // 2 Desert
+    {0,2,5,2,4,0,0},        // 3 Desert
+    {0,1,5,3,4,0,0},        // 4 Desert
+    {0,4,0,3,0,0,0},        // 5 Desert, in front of the pyramid
+    {0,5,10,7,8,0,0},       // 6 Antechamber
+    {0,0,10,0,6,0,0},       // 7 Triangular room
+    {0,0,9,6,0,0,0},        // 8 White room
+    {0,8,0,10,0,0,0},       // 9 Recess
+    {0,6,0,7,9,0,0},        // 10 Hallway
+    {0,0,13,14,0,0,0},      // 11 Red room
+    {0,0,15,13,0,0,10},     // 12 Little room
+    {0,11,15,14,12,0,0},    // 13 Alchemist's
+    {0,11,0,0,13,0,0},      // 14 Embalmer's
+    {0,13,0,0,12,0,0},      // 15 Iankho's
+    {0,0,0,17,0,8,0},       // 16 gallery
+    {0,0,0,18,16,0,0},      // 17 tunnel
+    {0,0,21,19,17,0,0},     // 18 tunnel
+    {0,0,0,0,18,0,0},       // 19 green room
+    {0,0,0,21,0,0,0},       // 20 small tunnel
+    {0,18,0,22,20,0,0},     // 21 armoury
+    {0,0,0,0,21,0,0},       // 22 hieroglyphs'
+    {0,20,24,0,0,0,0},      // 23 Hanyke's
+    {0,23,0,0,0,0,0}};      // 24 Funerary chapel
 
 // The locations of the different objects
 int objloc[22];
@@ -243,6 +244,9 @@ void setup(void)
     pcon[10][5]=0;
     pcon[5][2]=0;
     pcon[8][6]=0;
+    ploc[8]=inawhiteroomc;
+    ploc[20]=cunicolostretto;
+    obj[9]=skeletonb;
 }
 
 /** Main game routine
@@ -782,22 +786,26 @@ void posa(void)
         writeln(donthavethat);
         return;
     }
-    if(numberObject!=3 && numberObject!=7 && numberObject!=11) {
-        objloc[numberObject]=currentPosition;
-        --numberOfObjects;
-        showDesc = true;
-        return; // goto 95
-    }
     if(numberObject==3 && currentPosition==20) {
         writeln(wowpassage);
         ploc[20]=cunicolocontrave;
         pcon[20][2]=23;
         objloc[3]=0;
+        --numberOfObjects;
+        showDesc = true;
+        return;
     }
+    if(numberObject!=7 && numberObject!=11) {
+        objloc[numberObject]=currentPosition;
+        --numberOfObjects;
+        showDesc = true;
+        return; // goto 95
+    }
+    
     if(numberObject==7 && currentPosition==10) {
         writeln(skeletongoesout);
         pcon[10][5]=12;
-        obj[9]=scheletrocontento;
+        obj[9]=skeletonh;
         objloc[7]=0;
         scalaAperta=true;
     }
@@ -915,7 +923,7 @@ void ondeggia(void)
         writeln(passageopens);
         pcon[8][5+1]=16;
         passaggio12=true;
-        ploc[8]=inawhiteroom;
+        ploc[8]=inawhiteroomo;
         showDesc=true;
     }
 }

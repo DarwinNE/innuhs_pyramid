@@ -12,7 +12,7 @@ char* obj[22]=
     "un flauto",
     "un teschio",
     "una *collana d'oro*",
-    "uno scheletro senza testa",
+    NULL,
     "un altare insanguinato",
     "bende pulite",
     "una *scure d'oro*",
@@ -26,6 +26,9 @@ char* obj[22]=
     "una *maschera d'oro*",
     "una mummia con le bende sporche"};
 
+char *skeletonb="uno scheletro senza testa.";
+char *skeletonh="uno scheletro contento";
+
 #ifndef LONGVERSION
 
 // Description of places
@@ -33,7 +36,7 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "nel deserto, di fronte c'e' una piramide.",
     "nell'anticamera della piramide di Innuh.",
     "in una stanza triangolare.",
-    "in una sala bianca e sul muro c'e' incastonato uno zaffiro.",
+    NULL,
     "in una nicchia.",
     "in un corridoio.",
     "in una sala rossa.",
@@ -45,11 +48,14 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
     "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
     "in una stanza verde.",
-    "in un cunicolo stretto con un fosso troppo largo da saltare.",
+    NULL,
     "nella vecchia armeria.",
     "nella sala dei geroglifici.",
     "nella sala di Hanyke.",
     "nella cappella funeraria."};
+char* inawhiteroomo="in una sala bianca, c'e' un passaggio che porta di sotto.";
+char* inawhiteroomc=
+    "in una sala bianca e sul muro c'e' incastonato uno zaffiro.";
 #else
 // Description of places, longer version.
 char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
@@ -61,9 +67,7 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "in una stanza triangolare. Qualcuno e' già stato qui in passato. Molte "
     "tracce sono visibili, ma la polvere le ha ricoperte. Probabilmente, "
     "l'ultimo visitatore e' stato qui non meno di un anno fa.",
-    "in una sala bianca. Il colore viene dal marmo perfettamente levigato "
-    "che fodera le pareti con lastre perfettamente allineate. Uno zaffiro e' "
-    "incastonato al centro di una parete.",
+    NULL,
     "in una nicchia ricavata nella pietra.",
     "in un lungo corridoio, lastricato di pietre di taglia diversa che "
     "tracciano un percorso irregolare sul pavimento.",
@@ -78,7 +82,7 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
     "in un tunnel. Una scritta dice: non passare, o MORIRAI.",
     "in una stanza verde.",
-    "in un cunicolo stretto con un fosso troppo largo da saltare.",
+    NULL,
     "nella vecchia armeria, provvista di ganci di bronzo, corrosi ma ancora "
     "visibili sulle pareti. ",
     "nella sala dei geroglifici. Sono incisi su tutti i muri e probabilmente "
@@ -89,6 +93,12 @@ char* ploc[25]= {"", "nel deserto","nel deserto","nel deserto","nel deserto",
     "di un cielo blu pieno di stelle.",
     "nella cappella funeraria. Figure del Libro dei Morti sono dipinte sulle "
     "pareti. Si vede il dio Anubi che pesa il cuore di un defunto."};
+
+char* inawhiteroomo="in una sala bianca, c'e' un passaggio che porta di sotto.";
+char* inawhiteroomc=
+    "in una sala bianca. Il colore viene dal marmo perfettamente levigato "
+    "che fodera le pareti con lastre perfettamente allineate. Uno zaffiro e' "
+    "incastonato al centro di una parete.";
 #endif
 
 // Abbreviated names
@@ -106,11 +116,10 @@ char *verbsabb[NV] = {"", "crep", "arre", "inve", "i   ", "guar", "vai ",
 
 
 char *cunicolostretto=
-    "In un cunicolo stretto, con un fosso troppo largo da saltare.";
+    "in un cunicolo stretto, con un fosso troppo largo da saltare.";
 char *cunicolocontrave=
-    "In un cunicolo stretto, con un fosso troppo largo da saltare, "
+    "in un cunicolo stretto, con un fosso troppo largo da saltare, "
     "ma c'e' una trave che fa da passaggio.";
-char *scheletrocontento="Uno scheletro contento.";
 
 char* directions[7] = {"", "nord", "sud ", "est ", "ovest", "sopra",
     "sotto"};
@@ -167,7 +176,6 @@ char* getheretreasures="Dice: -portare qui i tesori.-";
 char* sayswaveme="Dice: ondeggiami.";
 char* passageopens="Incredibile! Il muro si illumina e appare un passaggio che "
         "porta di sotto.";
-char* inawhiteroom="in una sala bianca, c'e' un passaggio che porta di sotto.";
 char* ionlyhavehandstodig="Ho solo le mani per scavare; posso scavare solo la "
         "sabbia.";
 char* idigwithmyhands="Scavo con le mani e";
