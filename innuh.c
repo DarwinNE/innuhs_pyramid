@@ -37,6 +37,8 @@
     #include"c128_codes.h"
 #elif defined(VIC20)
     #include"vic20_codes.h"
+#elif defined(C64)
+    #include"c64_codes.h"
 #else
     #include"modern.h"
 #endif
