@@ -1,4 +1,4 @@
-all:    modern_en modern_it c128_en vic20_en c64_en pet_en c128_it vic20_it c64_it pet_it plus4_en plus4_it clean
+all:    modern_en modern_it ti_en c128_en vic20_en c64_en pet_en c128_it vic20_it c64_it pet_it plus4_en plus4_it clean
 
 modern_en:
 	gcc innuh.c -o innuh-en
@@ -57,6 +57,16 @@ plus4_it:
 	cl65 innuh-plus4-it.s -t plus4 -o innuh-plus4-it.prg
 	rm innuh-plus4-it.s
 
+ti_en:
+	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c ti994a_compat.c -D TI994A_40COL -c -O2 -std=c99 -s --save-temp -Wall
+	/usr/local/bin/gccti/bin/tms9900-ld  innuh.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o innuh-ti994a.elf --script=ti994a_linkfile
+	../elf2ea5/elf2ea5 innuh-ti994a.elf innuhti.ea5
+	../ea5split/ea5split innuhti.ea5
+
 clean:
-	rm *.o
-    
+	rm *.o -f
+	rm *.elf -f
+	rm *.ea5 -f
+	rm INNUHT? -f
+

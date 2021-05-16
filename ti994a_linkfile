@@ -1,0 +1,11 @@
+SECTIONS
+{
+  .text 0xa000: 
+  {
+    ti994a_crt0.o(.text)
+    innuh.o(.text)
+    ti994a_compat.o(.text)
+  }
+  .data     . : {*(.data)}
+  .bss      . : {*(.bss)}
+}
