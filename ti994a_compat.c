@@ -2,7 +2,6 @@
 
 extern int printf(const char *format, ...);
 static int tolower(int ch);
-static void tolowerstring(char* str);
 
 FILE* stdin = NULL;
 
