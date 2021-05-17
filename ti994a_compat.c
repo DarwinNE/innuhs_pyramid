@@ -16,12 +16,12 @@ char *strncpy(char *toHere, const char *fromHere, size_t count)
             toHere++;
             fromHere++;
             count--;
-        } while ((*fromHere != 0) && (count > 0));
-        *toHere = 0;
+        } while ((*fromHere != '\0') && (count > 0));
+        *toHere = '\0';
     }
     else if (toHere != NULL)
     {
-        *toHere = 0;
+        *toHere = '\0';
     }
 
     return toHere;
@@ -33,19 +33,23 @@ char* fgets(char *buffer, int size, FILE *f)
     // printf("'%s'\n", buffer);
 
     // ti gets routine only supports UPPERCASE input
-    // for whatever reason. Convert all to lc.
-    tolowerstring(buffer);
-
-    // add a space to the end... this is a hack because
-    // there is a bug that removes one char from the string
+    // for whatever reason. 
+    // Convert all to lc, since this is what the game expects.
     char* p = buffer;
-    while (*p != 0) p++;
-    *p = ' '; p++;
-    *p = 0;
-    // end hack
+    while (*p != '\0')
+    {
+        *p = tolower(*p);
+        p++;
+    }
+
+    // add a newline to the end. 'fgets' returns the newline,
+    // but 'gets' does not.  Calling function 'readln' expects
+    // (and removes) the newline.
+    *p = '\n';
+    p++;
+    *p = '\0';
 
     //printf("'%s'\n", buffer);
- 
     return buffer;
 }
 
@@ -55,14 +59,3 @@ static int tolower(int ch)
     return ch;
 }
 
-static void tolowerstring(char* str)
-{
-    if (str != NULL)
-    {
-        while (*str != 0)
-        {
-            *str = tolower(*str);
-            str++;
-        }
-    }
-}
