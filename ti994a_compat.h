@@ -3,7 +3,6 @@
 
 #define NULL ((void*)0)
 typedef unsigned int size_t;
-typedef int ssize_t;
 typedef unsigned int off_t;
 
 struct FILE_t
@@ -26,18 +25,8 @@ extern FILE *stdin;
 extern FILE *stdout;
 extern FILE *stderr;
 
-
-/*
-int printf(const char *format, ...);
-
-int strcmp(const char *s1, const char *s2);
-char *strcpy(char *toHere, const char *fromHere);
-
-char *strncpy(char *toHere, const char *fromHere, size_t count);
-size_t strlen(const char *s);
-*/
-
 char *strncpy(char *toHere, const char *fromHere, size_t count);
 char* fgets(char *buffer, int size, FILE *f);
 extern void gets(char *buffer, int size);
+
 #endif

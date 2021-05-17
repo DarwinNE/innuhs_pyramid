@@ -11,7 +11,7 @@ void wait1s(void)
     unsigned int retTime;
     volatile int r=5;
     // Implement a dull loop!
-    for(retTime=0; retTime<1000;++retTime){
+    for(retTime=0; retTime<10000;++retTime){
         r*=5;
         r/=5;
     }
@@ -19,7 +19,7 @@ void wait1s(void)
 
 #define LONGVERSION
 
-void waitscreen(void) {}
+void waitscreen(void) { wait1s(); }
 void normaltxt(void)  {}
 void init_term(void)
 {

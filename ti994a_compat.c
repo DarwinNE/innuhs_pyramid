@@ -8,14 +8,20 @@ FILE* stdin = NULL;
 
 char *strncpy(char *toHere, const char *fromHere, size_t count)
 {
-    if (toHere != NULL && fromHere != NULL)
+    if (toHere != NULL && fromHere != NULL && count > 0)
     {
-        while ((*toHere = *fromHere) != 0 && (count > 0))
+        do
         {
+            *toHere = *fromHere;
             toHere++;
             fromHere++;
             count--;
-        }
+        } while ((*fromHere != 0) && (count > 0));
+        *toHere = 0;
+    }
+    else if (toHere != NULL)
+    {
+        *toHere = 0;
     }
 
     return toHere;
