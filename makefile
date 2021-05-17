@@ -15,7 +15,7 @@ vic20_en:
 	cc65 innuh.c -t vic20 -D VIC20 -C vic20-16k_exp.cfg -o innuh-vic-en.s
 	cl65 innuh-vic-en.s -t vic20 -C vic20-16k_exp.cfg -o innuh-vic-en.prg
 	rm innuh-vic-en.s
-	
+
 c64_en:
 	cc65 innuh.c -t c64 -D C64 -o innuh-c64-en.s
 	cl65 innuh-c64-en.s -t c64 -o innuh-c64-en.prg
@@ -57,16 +57,26 @@ plus4_it:
 	cl65 innuh-plus4-it.s -t plus4 -o innuh-plus4-it.prg
 	rm innuh-plus4-it.s
 
-ti_en:
+ti_en_40:
 	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
-	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c ti994a_compat.c -D TI994A_40COL -c -O2 -std=c99 -s --save-temp -Wall
-	/usr/local/bin/gccti/bin/tms9900-ld  innuh.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o innuh-ti994a.elf --script=ti994a_linkfile
-	../elf2ea5/elf2ea5 innuh-ti994a.elf innuhti.ea5
-	../ea5split/ea5split innuhti.ea5
+	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-en-40.o -D TI994A_40COL -D NCOL=40 -c -O2 -std=c99 -Wall
+	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-en-40.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien40.elf --script=ti994a_linkfile
+	../elf2ea5/elf2ea5 inutien40.elf inutien40.ea5
+	../ea5split/ea5split inutien40.ea5
+
+ti_en_80:
+	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-en-80.o -D TI994A_40COL -D NCOL=80 -c -O2 -std=c99 -Wall
+	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-en-80.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien80.elf --script=ti994a_linkfile
+	../elf2ea5/elf2ea5 inutien80.elf inutien80.ea5
+	../ea5split/ea5split inutien80.ea5
 
 clean:
 	rm *.o -f
 	rm *.elf -f
 	rm *.ea5 -f
-	rm INNUHT? -f
+	rm *.s -f
+	rm INUTI* -f
 
