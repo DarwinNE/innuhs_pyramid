@@ -24,7 +24,7 @@ Additionally the game plays on a modern computer terminal.
 
 To compile sources, you will need:
 
-* `gcc` (Modern version)
+* `gcc` (Modern versions)
 * `Cc65` (Commodore versions)
 * `tms9900-gcc`, `elf2ea5`, `ea5split` (TI99/4A versions)
 * `make`
@@ -43,7 +43,7 @@ The following files will be created:
 * `INUTIIT40` and `INUTIIT41` the 40 column TI99/4A version of the game, in Italian
 * `INUTIIT80` and `INUTIIT81` the 80 column TI99/4A version of the game, in Italian
 
-I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  Chue Xiong tested the TI versions have been tested in emulation.
+I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  Chue Xiong tested the TI versions in emulation.
 
 Here is the list of words understood by the game, while playing the version in English:
 ```
