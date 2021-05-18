@@ -58,36 +58,36 @@ plus4_it:
 	rm innuh-plus4-it.s
 
 ti_en_40:
-	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
-	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-en-40.o -D TI994A -D NCOL=40 -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-en-40.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien40.elf --script=ti994a_linkfile
-	../elf2ea5/elf2ea5 inutien40.elf inutien40.ea5
-	../ea5split/ea5split inutien40.ea5
+	tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	tms9900-gcc innuh.c -o innuh-ti-en-40.o -D TI994A -D NCOL=40 -c -O2 -std=c99 -Wall
+	tms9900-ld innuh-ti-en-40.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien40.elf --script=ti994a_linkfile
+	elf2ea5 inutien40.elf inutien40.ea5
+	ea5split inutien40.ea5
 
 ti_en_80:
-	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
-	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-en-80.o -D TI994A -D NCOL=80 -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-en-80.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien80.elf --script=ti994a_linkfile
-	../elf2ea5/elf2ea5 inutien80.elf inutien80.ea5
-	../ea5split/ea5split inutien80.ea5
+	tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	tms9900-gcc innuh.c -o innuh-ti-en-80.o -D TI994A -D NCOL=80 -c -O2 -std=c99 -Wall
+	tms9900-ld innuh-ti-en-80.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutien80.elf --script=ti994a_linkfile
+	elf2ea5 inutien80.elf inutien80.ea5
+	ea5split inutien80.ea5
 
 ti_it_40:
-	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
-	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-it-40.o -D ITALIAN -D TI994A -D NCOL=40 -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-it-40.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutiit40.elf --script=ti994a_linkfile
-	../elf2ea5/elf2ea5 inutiit40.elf inutiit40.ea5
-	../ea5split/ea5split inutiit40.ea5
+	tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	tms9900-gcc innuh.c -o innuh-ti-it-40.o -D ITALIAN -D TI994A -D NCOL=40 -c -O2 -std=c99 -Wall
+	tms9900-ld innuh-ti-it-40.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutiit40.elf --script=ti994a_linkfile
+	elf2ea5 inutiit40.elf inutiit40.ea5
+	ea5split inutiit40.ea5
 
 ti_it_80:
-	/usr/local/bin/gccti/bin/tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
-	/usr/local/bin/gccti/bin/tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-gcc innuh.c -o innuh-ti-it-80.o -D ITALIAN -D TI994A -D NCOL=80 -c -O2 -std=c99 -Wall
-	/usr/local/bin/gccti/bin/tms9900-ld innuh-ti-it-80.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutiit80.elf --script=ti994a_linkfile
-	../elf2ea5/elf2ea5 inutiit80.elf inutiit80.ea5
-	../ea5split/ea5split inutiit80.ea5
+	tms9900-as  ti994a_crt0.asm -o ti994a_crt0.o
+	tms9900-gcc ti994a_compat.c -c -O2 -std=c99 -Wall
+	tms9900-gcc innuh.c -o innuh-ti-it-80.o -D ITALIAN -D TI994A -D NCOL=80 -c -O2 -std=c99 -Wall
+	tms9900-ld innuh-ti-it-80.o ti994a_compat.o ti994a_crt0.o -L"libti99" -lti99 -o inutiit80.elf --script=ti994a_linkfile
+	elf2ea5 inutiit80.elf inutiit80.ea5
+	ea5split inutiit80.ea5
 
 
 clean:
