@@ -1,4 +1,10 @@
-all:    modern_en modern_it  c128_en vic20_en c64_en pet_en ti_en_40 ti_en_80 c128_it vic20_it c64_it pet_it plus4_en plus4_it ti_it_40 ti_it_80 clean
+all:              all_modern all_commodore all_ti clean
+
+all_modern:       modern_en modern_it clean
+
+all_commodore:    c128_en vic20_en c64_en pet_en c128_it vic20_it c64_it pet_it plus4_en plus4_it clean
+
+all_ti:           ti_en_40 ti_en_80 ti_it_40 ti_it_80 clean
 
 modern_en:
 	gcc innuh.c -o innuh-en
