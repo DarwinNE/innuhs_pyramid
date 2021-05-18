@@ -7,6 +7,7 @@ FILE* stdin = NULL;
 
 char *strncpy(char *toHere, const char *fromHere, size_t count)
 {
+    char* orig = toHere;
     if (toHere != NULL && fromHere != NULL && count > 0)
     {
         do
@@ -23,7 +24,7 @@ char *strncpy(char *toHere, const char *fromHere, size_t count)
         *toHere = '\0';
     }
 
-    return toHere;
+    return orig;
 }
 
 char* fgets(char *buffer, int size, FILE *f)
