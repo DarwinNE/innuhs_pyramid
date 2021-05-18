@@ -1,5 +1,5 @@
-#ifndef __TI994A_40COL_CODES_H__
-#define __TI994A_40COL_CODES_H__
+#ifndef __TI994A_CODES_H__
+#define __TI994A_CODES_H__
 
 #include "libti99/conio.h"
 
