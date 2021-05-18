@@ -3,6 +3,7 @@
 Originally on TI99/4A by Aristide Torrelli (MCmicrocomputer 33, sett. 1984).
 ZX Spectrum version by Manlio Severi, (MCmicrocomputer 35, nov. 1984).
 C language transcription, improvements and English translation by Davide Bucci.
+TI99/4A C port by Chue Xiong.
 
 Remarkably enough, in the original version of the game, the name of the pyramid is Iunnuh, and not Innuh. As you surely know, hieroglyphs do not use vocals, the second variant comes from a different transliteration of the pharaoh's cartouche found in the pyramid (more seriously, I mis-read the title of the game and I did not realise for 25 years!)
 
@@ -17,25 +18,34 @@ reveal its secrets could come back to tell his adventure.*
 
 *__Good luck, you'll need it!__*
 
-The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, PET with 32K and on a modern computer terminal.
+The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, and PET with 32K.
+To play on a TI99/4A you will need a 32K RAM expansion, Editor/Assembler cartridge, and disk drive; for the 80 column version you will need an F18A video adapter. 
+Additionally the game plays on a modern computer terminal.
 
 To compile sources, you will need:
 
-* `gcc`
-* `Cc65`
+* `gcc` (Modern versions)
+* `Cc65` (Commodore versions)
+* [`tms9900-gcc`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`elf2ea5`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`ea5split`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/?do=findComment&comment=2617570) (TI99/4A versions)
 * `make`
 
 download the sources and type `make` in the directory where the code is present.
 The following files will be created:
 
 * `innuh-en` modern OS executable (maybe with a .exe extension if you are using Windows) with the English version of the game
-* `innuh-en` modern OS executable (maybe with a .exe extension if you are using Windows) with the Italian version of the game
+* `innuh-it` modern OS executable (maybe with a .exe extension if you are using Windows) with the Italian version of the game
 * `innuh-c128-it.prg` the Commodore C128 version of the game, in Italian
 * `innuh-c128-en.prg` the Commodore C128 version of the game, in English
 * `innuh-vic-it.prg` the Commodore VIC-20+16K version of the game, in Italian
 * `innuh-vic-en.prg` the Commodore VIC-20+16K version of the game, in English
+* `INUTIEN40` and `INUTIEN41` the 40 column TI99/4A version of the game, in English
+* `INUTIEN80` and `INUTIEN81` the 80 column TI99/4A version of the game, in English
+* `INUTIIT40` and `INUTIIT41` the 40 column TI99/4A version of the game, in Italian
+* `INUTIIT80` and `INUTIIT81` the 80 column TI99/4A version of the game, in Italian
 
-I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).
+I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  
+
+Chue Xiong tested the TI versions in emulation using the [Classic99](http://harmlesslion.com/software/classic99) emulator.  The game is in EA5 format, and needs to be run using option 5 of the Editor/Assembler cartridge.
 
 Here is the list of words understood by the game, while playing the version in English:
 ```
