@@ -3,6 +3,7 @@
 Originally on TI99/4A by Aristide Torrelli (MCmicrocomputer 33, sett. 1984).
 ZX Spectrum version by Manlio Severi, (MCmicrocomputer 35, nov. 1984).
 C language transcription, improvements and English translation by Davide Bucci.
+TI99/4A C port by Chue Xiong.
 
 Remarkably enough, in the original version of the game, the name of the pyramid is Iunnuh, and not Innuh. As you surely know, hieroglyphs do not use vocals, the second variant comes from a different transliteration of the pharaoh's cartouche found in the pyramid (more seriously, I mis-read the title of the game and I did not realise for 25 years!)
 
@@ -17,25 +18,30 @@ reveal its secrets could come back to tell his adventure.*
 
 *__Good luck, you'll need it!__*
 
-The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, PET with 32K and on a modern computer terminal.
+The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, PET with 32K, TI99/4A with 32K and disk drive (40-column mode) and optionally with F18A (80-column mode), and on a modern computer terminal.
 
 To compile sources, you will need:
 
 * `gcc`
-* `Cc65`
+* `Cc65` (Commodore versions)
+* `tms9900-gcc`, `elf2ea5`, `ea5split` (TI99/4A versions)
 * `make`
 
 download the sources and type `make` in the directory where the code is present.
 The following files will be created:
 
 * `innuh-en` modern OS executable (maybe with a .exe extension if you are using Windows) with the English version of the game
-* `innuh-en` modern OS executable (maybe with a .exe extension if you are using Windows) with the Italian version of the game
+* `innuh-it` modern OS executable (maybe with a .exe extension if you are using Windows) with the Italian version of the game
 * `innuh-c128-it.prg` the Commodore C128 version of the game, in Italian
 * `innuh-c128-en.prg` the Commodore C128 version of the game, in English
 * `innuh-vic-it.prg` the Commodore VIC-20+16K version of the game, in Italian
 * `innuh-vic-en.prg` the Commodore VIC-20+16K version of the game, in English
+* `INUTIEN40` the 40 column TI99/4A version of the game, in English
+* `INUTIEN80` the 80 column TI99/4A version of the game, in English
+* `INUTIIT40` the 40 column TI99/4A version of the game, in Italian
+* `INUTIIT80` the 80 column TI99/4A version of the game, in Italian
 
-I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).
+I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  Chue Xiong tested the TI versions have been tested in emulation.
 
 Here is the list of words understood by the game, while playing the version in English:
 ```
