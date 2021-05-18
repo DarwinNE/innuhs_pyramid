@@ -26,7 +26,7 @@ To compile sources, you will need:
 
 * `gcc` (Modern versions)
 * `Cc65` (Commodore versions)
-* [`tms9900-gcc`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`elf2ea5`]((https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`ea5split`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/?do=findComment&comment=2617570) (TI99/4A versions)
+* [`tms9900-gcc`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`elf2ea5`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`ea5split`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/?do=findComment&comment=2617570) (TI99/4A versions)
 * `make`
 
 download the sources and type `make` in the directory where the code is present.
