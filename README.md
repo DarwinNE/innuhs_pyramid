@@ -26,7 +26,7 @@ To compile sources, you will need:
 
 * `gcc` (Modern versions)
 * `Cc65` (Commodore versions)
-* `tms9900-gcc`, `elf2ea5`, `ea5split` (TI99/4A versions)
+* [`tms9900-gcc`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`elf2ea5`]((https://atariage.com/forums/topic/164295-gcc-for-the-ti/), [`ea5split`](https://atariage.com/forums/topic/164295-gcc-for-the-ti/?do=findComment&comment=2617570) (TI99/4A versions)
 * `make`
 
 download the sources and type `make` in the directory where the code is present.
@@ -45,7 +45,7 @@ The following files will be created:
 
 I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  
 
-Chue Xiong tested the TI versions in emulation.  The game is in EA5 format, and needs to be run using option 5 of the Editor/Assembler cartridge.
+Chue Xiong tested the TI versions in emulation using the [Classic99](http://harmlesslion.com/software/classic99) emulator.  The game is in EA5 format, and needs to be run using option 5 of the Editor/Assembler cartridge.
 
 Here is the list of words understood by the game, while playing the version in English:
 ```
