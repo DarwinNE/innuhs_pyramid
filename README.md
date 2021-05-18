@@ -18,7 +18,7 @@ reveal its secrets could come back to tell his adventure.*
 
 *__Good luck, you'll need it!__*
 
-The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, PET with 32K.
+The game is currently playable on the Commodore 128 (in 80-column mode), on the VIC-20 with the 16K RAM expansion, on the 64, Plus4, and PET with 32K.
 To play on a TI99/4A you will need a 32K RAM expansion, Editor/Assembler cartridge, and disk drive; for the 80 column version you will need an F18A video adapter. 
 Additionally the game plays on a modern computer terminal.
 
