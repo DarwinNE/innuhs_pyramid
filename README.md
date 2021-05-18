@@ -43,7 +43,9 @@ The following files will be created:
 * `INUTIIT40` and `INUTIIT41` the 40 column TI99/4A version of the game, in Italian
 * `INUTIIT80` and `INUTIIT81` the 80 column TI99/4A version of the game, in Italian
 
-I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  Chue Xiong tested the TI versions in emulation.
+I tested the VIC-20 and the C128 versions on VICE emulators as well as on the real hardware (both PAL machines: the VIC-20 is a CR European version and the C128 is a C128D with the plastic case).  
+
+Chue Xiong tested the TI versions in emulation.  The game is in EA5 format, and needs to be run using option 5 of the Editor/Assembler cartridge.
 
 Here is the list of words understood by the game, while playing the version in English:
 ```
