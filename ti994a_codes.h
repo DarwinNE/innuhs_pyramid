@@ -2,6 +2,8 @@
 #define __TI994A_CODES_H__
 
 #include "libti99/conio.h"
+#include "libti99/system.h"
+#include "libti99/vdp.h"
 
 // The number of columns of the screen
 // NCOL definition moved to makefile
@@ -36,6 +38,7 @@ void init_term(void)
         textcolor(COLOR_LTGREEN);
 
         charsetlc();
+        clrscr();
 }
 
 void inputtxt(void) {}
@@ -48,6 +51,6 @@ void tab(void) {printf("    ");}
 void tab(void) {printf("  ");}
 #endif
 
-void leave(void) {}
+void leave(void) { exit(); }
 
 #endif
