@@ -216,6 +216,8 @@ char* gamepres=
     "C language and English translation by Davide Bucci "
     "(davbucci@tiscali.it)\n"
     "Sept. 16 2018.\n"
+    "C version ported to TI99/4A by Chue Xiong 2021, "
+    "and uses libti99 by Mike Brent (Tursi).\n" 
     "\n"
     "\b"
     "The Innuh's pyramid was built three thousand years ago, somewhere in "

@@ -28,8 +28,13 @@
     fbc         chargeOfBatteries
 */
 
-#include<stdio.h>
-#include<string.h>
+#ifdef TI994A
+    #include "ti994a_compat.h"
+    #include "libti99/string.h"
+#else
+    #include<stdio.h>
+    #include<string.h>
+#endif
 
 #include"innuh.h"
 
@@ -46,6 +51,8 @@ int colc=0;
     #include"cplus4_codes.h"
 #elif defined(PET)
     #include"cpet_codes.h"
+#elif defined(TI994A)
+    #include "ti994a_codes.h"
 #else
     #include"modern.h"
 #endif
